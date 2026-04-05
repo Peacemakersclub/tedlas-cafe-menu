@@ -127,8 +127,9 @@
 
         .card-img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
+            background: #f0e4d0;
         }
 
         .card-body {
@@ -293,7 +294,7 @@
         }
 
         .cart-qty {
-        width: 30px;
+            width: 30px;
             text-align: center;
             font-weight: bold;
         }
@@ -431,24 +432,25 @@
     <ul class="nav-menu">
         <li><a href="#breakfast">Breakfast</a></li>
         <li><a href="#lunch">Lunch</a></li>
-        <li><a href="#beverage">Beverages</a></li>
+        <li><a href="#beverages">Beverages</a></li>
+        <li><a href="#burgers">Burgers</a></li>
     </ul>
     <div class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
 </nav>
 
 <div class="container">
-    <!-- BREAKFAST SECTION -->
+    <!-- ==================== BREAKFAST SECTION ==================== -->
     <div class="section-header">
         <h2 class="section-title" id="breakfast">☀️ Breakfast</h2>
     </div>
     <div class="menu-grid">
-        <!-- Kinche with butter -->
+        <!-- Scrambled Egg -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600" alt="Kinche">
+            <img class="card-img" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=600" alt="Scrambled Egg">
             <div class="card-body">
-                <div class="card-title">Kinche (with Butter)</div>
-                <div class="card-price">500 BIRR</div>
-                <div class="card-desc">Steel cut oats, egg, homemade butter • Authentic Ethiopian breakfast</div>
+                <div class="card-title">Scrambled Egg</div>
+                <div class="card-price">300 BIRR</div>
+                <div class="card-desc">Classic scrambled eggs, fluffy and delicious</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -457,13 +459,13 @@
                 <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
-        <!-- Kinche with olive oil - FIXED IMAGE -->
+        <!-- Scrambled Egg with Tomato -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600" alt="Kinche with olive oil">
+            <img class="card-img" src="https://images.unsplash.com/photo-1525351486363-ef0f249b2bfe?w=600" alt="Scrambled Egg with Tomato">
             <div class="card-body">
-                <div class="card-title">Kinche (Olive Oil)</div>
-                <div class="card-price">400 BIRR</div>
-                <div class="card-desc">Steel cut oats with premium olive oil • Light & healthy</div>
+                <div class="card-title">Scrambled Egg with Tomato</div>
+                <div class="card-price">300 BIRR</div>
+                <div class="card-desc">Eggs scrambled with fresh tomatoes and onions</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -472,13 +474,13 @@
                 <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
-        <!-- Scrambled Eggs -->
+        <!-- Scrambled Egg with Beef -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=600" alt="Scrambled Eggs">
+            <img class="card-img" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600" alt="Scrambled Egg with Beef">
             <div class="card-body">
-                <div class="card-title">Scrambled Eggs</div>
-                <div class="card-price">400 BIRR</div>
-                <div class="card-desc">Eggs with onion, tomato, jalapenos • Fresh & flavorful</div>
+                <div class="card-title">Scrambled Egg with Beef</div>
+                <div class="card-price">380 BIRR</div>
+                <div class="card-desc">Eggs scrambled with minced beef, tomatoes, and onions</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -487,13 +489,13 @@
                 <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
-        <!-- Scrambled Eggs with Meat -->
+        <!-- Normal Chechebsa -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1525351486363-ef0f249b2bfe?w=600" alt="Scrambled Eggs with Minced Meat">
+            <img class="card-img" src="https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=600" alt="Normal Chechebsa">
             <div class="card-body">
-                <div class="card-title">Scrambled Eggs with Minced Meat</div>
-                <div class="card-price">500 BIRR</div>
-                <div class="card-desc">Eggs, minced beef, onion, tomato, jalapenos • Hearty breakfast</div>
+                <div class="card-title">Normal Chechebsa</div>
+                <div class="card-price">200 BIRR</div>
+                <div class="card-desc">Traditional shredded flatbread with spiced butter</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -502,13 +504,13 @@
                 <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
-        <!-- Chechebsa -->
+        <!-- Special Chechebsa -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=600" alt="Chechebsa">
+            <img class="card-img" src="https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=600" alt="Special Chechebsa">
             <div class="card-body">
-                <div class="card-title">Chechebsa</div>
-                <div class="card-price">500 BIRR</div>
-                <div class="card-desc">Red teff, wheat flour, spiced butter, yogurt & honey • Traditional delight</div>
+                <div class="card-title">Special Chechebsa</div>
+                <div class="card-price">250 BIRR</div>
+                <div class="card-desc">Chechebsa with extra honey and yogurt topping</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -517,13 +519,58 @@
                 <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
-        <!-- Dirkosh Firfir -->
+        <!-- Normal Ful -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=600" alt="Dirkosh Firfir">
+            <img class="card-img" src="https://images.unsplash.com/photo-1590779032700-8d3b2c3e17e9?w=600" alt="Normal Ful">
             <div class="card-body">
-                <div class="card-title">Dirkosh Firfir</div>
-                <div class="card-price">700 BIRR</div>
-                <div class="card-desc">Dirkosh spiced stew with homemade butter • Rich & aromatic</div>
+                <div class="card-title">Normal Ful</div>
+                <div class="card-price">200 BIRR</div>
+                <div class="card-desc">Fava beans stewed with cumin, garlic, and olive oil</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Special Ful -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1590779032700-8d3b2c3e17e9?w=600" alt="Special Ful">
+            <div class="card-body">
+                <div class="card-title">Special Ful</div>
+                <div class="card-price">250 BIRR</div>
+                <div class="card-desc">Ful with egg, cheese, and fresh vegetables</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Normal Flour -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Normal Flour">
+            <div class="card-body">
+                <div class="card-title">Normal Flour</div>
+                <div class="card-price">200 BIRR</div>
+                <div class="card-desc">Traditional flour-based breakfast dish</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Special Flour -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Special Flour">
+            <div class="card-body">
+                <div class="card-title">Special Flour</div>
+                <div class="card-price">250 BIRR</div>
+                <div class="card-desc">Flour dish with spiced butter and honey</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -534,17 +581,18 @@
         </div>
     </div>
 
-    <!-- LUNCH SECTION -->
+    <!-- ==================== LUNCH SECTION ==================== -->
     <div class="section-header">
-        <h2 class="section-title" id="lunch">🍛 Lunch</h2>
+        <h2 class="section-title" id="lunch">🍛 Lunch - Ethiopian Dishes</h2>
     </div>
     <div class="menu-grid">
+        <!-- Fasting Firfir -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Dinch be Siga">
+            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Fasting Firfir">
             <div class="card-body">
-                <div class="card-title">Dinch be Siga</div>
-                <div class="card-price">700 BIRR</div>
-                <div class="card-desc">Potato, beef meat, spiced stew, homemade butter</div>
+                <div class="card-title">Fasting Firfir</div>
+                <div class="card-price">280 BIRR</div>
+                <div class="card-desc">Injera mixed with spicy berbere sauce, vegan</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -553,54 +601,178 @@
                 <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Yechikina Tibis">
-            <div class="card-body">
-                <div class="card-title">Yechikina Tibis</div>
-                <div class="card-price">900 BIRR</div>
-                <div class="card-desc">Stir-fried beef with tomato, onion, jalapenos • Signature dish</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Tibis Firfir">
-            <div class="card-body">
-                <div class="card-title">Tibis Firfir</div>
-                <div class="card-price">700 BIRR</div>
-                <div class="card-desc">Injera with beef filet, onion, tomato, jalapenos, chili curry</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Fasting Plater">
-            <div class="card-body">
-                <div class="card-title">Fasting Plater (Vegetarian)</div>
-                <div class="card-price">700 BIRR</div>
-                <div class="card-desc">Lentils, chickpea, cabbage, sunflower seeds, tomato salad</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
+        <!-- Shiro -->
         <div class="card">
             <img class="card-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600" alt="Shiro">
             <div class="card-body">
                 <div class="card-title">Shiro</div>
+                <div class="card-price">280 BIRR</div>
+                <div class="card-desc">Chickpea flour stew with berbere and garlic</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Tegabino -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Tegabino">
+            <div class="card-body">
+                <div class="card-title">Tegabino</div>
+                <div class="card-price">340 BIRR</div>
+                <div class="card-desc">Beef stew with Ethiopian spices</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Timatim Lebleb -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Timatim Lebleb">
+            <div class="card-body">
+                <div class="card-title">Timatim Lebleb</div>
+                <div class="card-price">200 BIRR</div>
+                <div class="card-desc">Fresh tomato salad with onions and jalapenos</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Timatim Kurt -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Timatim Kurt">
+            <div class="card-body">
+                <div class="card-title">Timatim Kurt</div>
+                <div class="card-price">200 BIRR</div>
+                <div class="card-desc">Chopped tomato and onion salad</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Pasta with Tomato Sauce -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Pasta with Tomato Sauce">
+            <div class="card-body">
+                <div class="card-title">Pasta with Tomato Sauce</div>
+                <div class="card-price">280 BIRR</div>
+                <div class="card-desc">Spaghetti with rich tomato sauce</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Pasta with Vegetables -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Pasta with Vegetables">
+            <div class="card-body">
+                <div class="card-title">Pasta with Vegetables</div>
+                <div class="card-price">320 BIRR</div>
+                <div class="card-desc">Pasta tossed with fresh mixed vegetables</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Tibs -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Tibs">
+            <div class="card-body">
+                <div class="card-title">Tibs</div>
+                <div class="card-price">480 BIRR</div>
+                <div class="card-desc">Sautéed beef with onions, tomatoes, and jalapenos</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Chikina Tibs -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Chikina Tibs">
+            <div class="card-body">
+                <div class="card-title">Chikina Tibs</div>
+                <div class="card-price">580 BIRR</div>
+                <div class="card-desc">Sautéed chicken with Ethiopian spices</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Tibs Firfir -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Tibs Firfir">
+            <div class="card-body">
+                <div class="card-title">Tibs Firfir</div>
+                <div class="card-price">390 BIRR</div>
+                <div class="card-desc">Injera mixed with spicy tibs sauce and meat</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Quanta Firfir -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Quanta Firfir">
+            <div class="card-body">
+                <div class="card-title">Quanta Firfir</div>
+                <div class="card-price">420 BIRR</div>
+                <div class="card-desc">Dried beef mixed with injera and berbere</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Dulet -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Dulet">
+            <div class="card-body">
+                <div class="card-title">Dulet</div>
+                <div class="card-price">340 BIRR</div>
+                <div class="card-desc">Minced meat, liver, and tripe with Ethiopian spices</div>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="20">
+                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Bozena Shiro -->
+        <div class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600" alt="Bozena Shiro">
+            <div class="card-body">
+                <div class="card-title">Bozena Shiro</div>
                 <div class="card-price">400 BIRR</div>
-                <div class="card-desc">Chickpea flour stew • Creamy and comforting</div>
+                <div class="card-desc">Shiro with tender beef cubes</div>
                 <div class="quantity-selector">
                     <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
                     <input type="number" class="quantity-input" value="1" min="1" max="20">
@@ -611,323 +783,13 @@
         </div>
     </div>
 
-    <!-- BEVERAGE SECTION -->
+    <!-- ==================== BURGERS & SANDWICHES ==================== -->
     <div class="section-header">
-        <h2 class="section-title" id="beverage">☕ Beverages</h2>
+        <h2 class="section-title" id="burgers">🍔 Burgers & Sandwiches</h2>
     </div>
     <div class="menu-grid">
+        <!-- Egg Sandwich -->
         <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600" alt="Traditional Coffee">
+            <img class="card-img" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Egg Sandwich">
             <div class="card-body">
-                <div class="card-title">Traditional Coffee</div>
-                <div class="card-price">70 BIRR</div>
-                <div class="card-desc">Ethiopian coffee ceremony style • Rich & aromatic</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=600" alt="Macchiato">
-            <div class="card-body">
-                <div class="card-title">Macchiato</div>
-                <div class="card-price">120 BIRR</div>
-                <div class="card-desc">Espresso with a touch of steamed milk</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600" alt="Tea">
-            <div class="card-body">
-                <div class="card-title">Tea (Black/Green/Ginger)</div>
-                <div class="card-price">70 BIRR</div>
-                <div class="card-desc">Freshly brewed tea of your choice</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1572116466296-b8af17f0b6d3?w=600" alt="Soft Drinks">
-            <div class="card-body">
-                <div class="card-title">Soft Drinks</div>
-                <div class="card-price">80 BIRR</div>
-                <div class="card-desc">Coke, Sprite, Fanta, and more</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600" alt="Beer">
-            <div class="card-body">
-                <div class="card-title">Beer</div>
-                <div class="card-price">140 BIRR</div>
-                <div class="card-desc">Local Ethiopian beer • Cold and refreshing</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1596803244618-0fe2f2202af3?w=600" alt="Water">
-            <div class="card-body">
-                <div class="card-title">Water (1 Liter)</div>
-                <div class="card-price">80 BIRR</div>
-                <div class="card-desc">Pure bottled water</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="vat-notice">
-        ⚠️ Prices do not include 15% VAT. All dishes prepared with 100% Teff, 100% Niger seed oil, 100% homemade clarified butter.
-    </div>
-</div>
-
-<footer>
-    <p>Tedla's Cafe & Restaurant | Authentic Ethiopian Cuisine</p>
-    <p>📍 Addis Ababa, Ethiopia | 📞 +251-912-345678</p>
-</footer>
-
-<!-- Cart Sidebar -->
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-<div class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-        <h3>Your Order</h3>
-        <button class="close-cart" onclick="toggleCart()">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-        <p style="text-align:center; color:#999;">Cart is empty</p>
-    </div>
-    <div class="cart-total">
-        <h4>Total: <span id="cartTotal">0</span> BIRR</h4>
-        <button class="checkout-btn" onclick="showPaymentModal()">Proceed to Payment</button>
-        <p style="font-size:0.7rem; text-align:center; margin-top:0.5rem;">VAT (15%) will be added at checkout</p>
-    </div>
-</div>
-
-<!-- Payment Modal -->
-<div class="payment-modal" id="paymentModal">
-    <h3>💳 Select Payment Method</h3>
-    
-    <div class="payment-option" onclick="selectPayment('telebirr')">
-        <strong>📱 Telebirr</strong>
-        <p>Pay using Telebirr mobile money</p>
-    </div>
-    
-    <div class="payment-option" onclick="selectPayment('bank')">
-        <strong>🏦 Bank Transfer</strong>
-        <p>Pay via Commercial Bank of Ethiopia</p>
-    </div>
-    
-    <div class="payment-details" id="paymentDetails" style="display:none;">
-        <!-- Dynamic content will appear here -->
-    </div>
-    
-    <button class="close-modal" onclick="closePaymentModal()">Cancel</button>
-</div>
-
-<script>
-    let cart = [];
-
-    function changeQty(btn, delta) {
-        let card = btn.closest('.card');
-        let input = card.querySelector('.quantity-input');
-        let newVal = parseInt(input.value) + delta;
-        if (newVal >= 1 && newVal <= 20) {
-            input.value = newVal;
-        }
-    }
-
-    function addToCart(btn) {
-        let card = btn.closest('.card');
-        let name = card.querySelector('.card-title').innerText;
-        let price = parseInt(card.querySelector('.card-price').innerText);
-        let qty = parseInt(card.querySelector('.quantity-input').value);
-        
-        // Check if item already exists in cart
-        let existingItem = cart.find(item => item.name === name);
-        
-        if (existingItem) {
-            existingItem.qty += qty;
-        } else {
-            cart.push({ name, price, qty });
-        }
-        
-        updateCart();
-        toggleCart(); // Open cart to show added items
-    }
-    
-    function updateCart() {
-        const cartCount = document.getElementById('cart-count');
-        const cartItemsDiv = document.getElementById('cartItems');
-        const cartTotalSpan = document.getElementById('cartTotal');
-        
-        let totalItems = 0;
-        let totalPrice = 0;
-        
-        cart.forEach(item => {
-            totalItems += item.qty;
-            totalPrice += item.price * item.qty;
-        });
-        
-        cartCount.innerText = totalItems;
-        
-        if (cart.length === 0) {
-            cartItemsDiv.innerHTML = '<p style="text-align:center; color:#999;">Cart is empty</p>';
-            cartTotalSpan.innerText = '0';
-            return;
-        }
-        
-        let itemsHtml = '';
-        cart.forEach((item, index) => {
-            itemsHtml += `
-                <div class="cart-item">
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">${item.price} BIRR each</div>
-                    </div>
-                    <div class="cart-item-controls">
-                        <button class="cart-qty-btn" onclick="updateCartQty(${index}, -1)">-</button>
-                        <span class="cart-qty">${item.qty}</span>
-                        <button class="cart-qty-btn" onclick="updateCartQty(${index}, 1)">+</button>
-                        <button class="cart-qty-btn" onclick="removeCartItem(${index})" style="background:#c0392b;">✕</button>
-                    </div>
-                </div>
-            `;
-        });
-        
-        cartItemsDiv.innerHTML = itemsHtml;
-        cartTotalSpan.innerText = totalPrice;
-    }
-    
-    function updateCartQty(index, delta) {
-        let newQty = cart[index].qty + delta;
-        if (newQty >= 1) {
-            cart[index].qty = newQty;
-        } else {
-            cart.splice(index, 1);
-        }
-        updateCart();
-    }
-    
-    function removeCartItem(index) {
-        cart.splice(index, 1);
-        updateCart();
-    }
-    
-    function toggleCart() {
-        const sidebar = document.getElementById('cartSidebar');
-        const overlay = document.getElementById('cartOverlay');
-        sidebar.classList.toggle('open');
-        overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
-    }
-    
-    function showPaymentModal() {
-        if (cart.length === 0) {
-            alert('Your cart is empty. Add some items first!');
-            return;
-        }
-        document.getElementById('paymentModal').style.display = 'block';
-    }
-    
-    function closePaymentModal() {
-        document.getElementById('paymentModal').style.display = 'none';
-        document.getElementById('paymentDetails').style.display = 'none';
-    }
-    
-    function selectPayment(method) {
-        let total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-        let vat = total * 0.15;
-        let grandTotal = total + vat;
-        
-        let orderSummary = cart.map(item => `${item.name} x${item.qty} - ${item.price * item.qty} BIRR`).join('\n');
-        
-        let detailsDiv = document.getElementById('paymentDetails');
-        
-        if (method === 'telebirr') {
-            detailsDiv.innerHTML = `
-                <strong>📱 Telebirr Payment Details (DEMO)</strong><br><br>
-                <p>📞 Telebirr Number: <strong>09XX-XXXXXX</strong></p>
-                <p>👤 Account Name: <strong>Tedla's Cafe</strong></p>
-                <br>
-                <p><strong>Order Total: ${grandTotal} BIRR</strong> (includes 15% VAT)</p>
-                <br>
-                <p>📋 <strong>Your Order:</strong></p>
-                <pre style="font-size:0.75rem; white-space:pre-wrap;">${orderSummary}</pre>
-                <br>
-                <p>⚠️ <strong>DEMO MODE:</strong> This is a fake Telebirr account for testing.</p>
-                <p>In real setup, replace with your actual Telebirr number.</p>
-                <button class="copy-btn" onclick="copyToClipboard('09XX-XXXXXX')">Copy Number</button>
-                <button class="checkout-btn" style="margin-top:1rem;" onclick="confirmOrder('telebirr', ${grandTotal})">✅ Confirm Order (Demo)</button>
-            `;
-        } else {
-            detailsDiv.innerHTML = `
-                <strong>🏦 Bank Transfer Details (DEMO)</strong><br><br>
-                <p>🏛️ Bank: <strong>Commercial Bank of Ethiopia</strong></p>
-                <p>🔢 Account Number: <strong>1000-123456-789</strong></p>
-                <p>👤 Account Name: <strong>Tedla's Cafe Restaurant</strong></p>
-                <br>
-                <p><strong>Order Total: ${grandTotal} BIRR</strong> (includes 15% VAT)</p>
-                <br>
-                <p>📋 <strong>Your Order:</strong></p>
-                <pre style="font-size:0.75rem; white-space:pre-wrap;">${orderSummary}</pre>
-                <br>
-                <p>⚠️ <strong>DEMO MODE:</strong> This is a fake bank account for testing.</p>
-                <p>In real setup, replace with your actual bank details.</p>
-                <button class="copy-btn" onclick="copyToClipboard('1000-123456-789')">Copy Account Number</button>
-                <button class="checkout-btn" style="margin-top:1rem;" onclick="confirmOrder('bank', ${grandTotal})">✅ Confirm Order (Demo)</button>
-            `;
-        }
-        
-        detailsDiv.style.display = 'block';
-    }
-    
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text);
-        alert('Copied: ' + text);
-    }
-    
-    function confirmOrder(method, total) {
-        let orderSummary = cart.map(item => `${item.name} x${item.qty} - ${item.price * item.qty} BIRR`).join('\n');
-        
-        let message = `📋 *NEW ORDER from Tedla's Cafe Website* 📋\n\n`;
-        message += `*Order Items:*\n${orderSummary}\n\n`;
-        message += `*Payment Method:* ${method === 'telebirr' ? 'Telebirr' : 'Bank Transfer'}\n`;
-        message += `*TOTAL:* ${total} BIRR (incl. 15% VAT)\n\n`;
-        message += `✅ Order received! We will contact you shortly.`;
-        
-        alert(`✅ ORDER CONFIRMED!\n\nTotal: ${total} BIRR\nPayment: ${method === 'telebirr' ? 'Telebirr' : 'Bank Transfer'}\n\n📞 We will contact you to confirm. Thank you for ordering from Tedla's Cafe!`);
-        
-        // Clear cart
-        cart = [];
-        updateCart();
-        closePaymentModal();
-        toggleCart();
-    }
-</script>
-</body>
-</html>
+               
