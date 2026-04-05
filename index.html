@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Tedla's Cafe & Restaurant | Authentic Ethiopian Cuisine</title>
+    <title>Yetedla Cafe & Restaurant | Authentic Ethiopian Cuisine</title>
     <style>
         * {
             margin: 0;
@@ -65,6 +65,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-menu a {
@@ -408,11 +409,24 @@
             margin-top: 3rem;
         }
 
+        .powered-by {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .powered-by a {
+            color: #d4a373;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 0.9rem; }
             .cart-sidebar { width: 100%; right: -100%; }
             .navbar { flex-direction: column; gap: 0.5rem; }
-            .nav-menu { margin: 0.5rem 0; }
+            .nav-menu { margin: 0.5rem 0; justify-content: center; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -421,19 +435,20 @@
 <!-- Hero Section -->
 <div class="hero">
     <div>
-        <h1>TEDLA'S CAFE</h1>
+        <h1>YETEDLA CAFE</h1>
         <p>Authentic Ethiopian Cuisine • Fresh Ingredients • Traditional Recipes</p>
     </div>
 </div>
 
 <!-- Navigation -->
 <nav class="navbar">
-    <div class="logo">☕ Tedla's Cafe</div>
+    <div class="logo">☕ Yetedla's Cafe</div>
     <ul class="nav-menu">
         <li><a href="#breakfast">Breakfast</a></li>
         <li><a href="#lunch">Lunch</a></li>
-        <li><a href="#beverages">Beverages</a></li>
         <li><a href="#burgers">Burgers</a></li>
+        <li><a href="#beverages">Beverages</a></li>
+        <li><a href="#hotdrinks">Hot Drinks</a></li>
     </ul>
     <div class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
 </nav>
@@ -443,353 +458,176 @@
     <div class="section-header">
         <h2 class="section-title" id="breakfast">☀️ Breakfast</h2>
     </div>
-    <div class="menu-grid">
-        <!-- Scrambled Egg -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=600" alt="Scrambled Egg">
-            <div class="card-body">
-                <div class="card-title">Scrambled Egg</div>
-                <div class="card-price">300 BIRR</div>
-                <div class="card-desc">Classic scrambled eggs, fluffy and delicious</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Scrambled Egg with Tomato -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1525351486363-ef0f249b2bfe?w=600" alt="Scrambled Egg with Tomato">
-            <div class="card-body">
-                <div class="card-title">Scrambled Egg with Tomato</div>
-                <div class="card-price">300 BIRR</div>
-                <div class="card-desc">Eggs scrambled with fresh tomatoes and onions</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Scrambled Egg with Beef -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600" alt="Scrambled Egg with Beef">
-            <div class="card-body">
-                <div class="card-title">Scrambled Egg with Beef</div>
-                <div class="card-price">380 BIRR</div>
-                <div class="card-desc">Eggs scrambled with minced beef, tomatoes, and onions</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Normal Chechebsa -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=600" alt="Normal Chechebsa">
-            <div class="card-body">
-                <div class="card-title">Normal Chechebsa</div>
-                <div class="card-price">200 BIRR</div>
-                <div class="card-desc">Traditional shredded flatbread with spiced butter</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Special Chechebsa -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=600" alt="Special Chechebsa">
-            <div class="card-body">
-                <div class="card-title">Special Chechebsa</div>
-                <div class="card-price">250 BIRR</div>
-                <div class="card-desc">Chechebsa with extra honey and yogurt topping</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Normal Ful -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1590779032700-8d3b2c3e17e9?w=600" alt="Normal Ful">
-            <div class="card-body">
-                <div class="card-title">Normal Ful</div>
-                <div class="card-price">200 BIRR</div>
-                <div class="card-desc">Fava beans stewed with cumin, garlic, and olive oil</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Special Ful -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1590779032700-8d3b2c3e17e9?w=600" alt="Special Ful">
-            <div class="card-body">
-                <div class="card-title">Special Ful</div>
-                <div class="card-price">250 BIRR</div>
-                <div class="card-desc">Ful with egg, cheese, and fresh vegetables</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Normal Flour -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Normal Flour">
-            <div class="card-body">
-                <div class="card-title">Normal Flour</div>
-                <div class="card-price">200 BIRR</div>
-                <div class="card-desc">Traditional flour-based breakfast dish</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Special Flour -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Special Flour">
-            <div class="card-body">
-                <div class="card-title">Special Flour</div>
-                <div class="card-price">250 BIRR</div>
-                <div class="card-desc">Flour dish with spiced butter and honey</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-    </div>
+    <div class="menu-grid" id="breakfast-grid"></div>
 
     <!-- ==================== LUNCH SECTION ==================== -->
     <div class="section-header">
         <h2 class="section-title" id="lunch">🍛 Lunch - Ethiopian Dishes</h2>
     </div>
-    <div class="menu-grid">
-        <!-- Fasting Firfir -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Fasting Firfir">
-            <div class="card-body">
-                <div class="card-title">Fasting Firfir</div>
-                <div class="card-price">280 BIRR</div>
-                <div class="card-desc">Injera mixed with spicy berbere sauce, vegan</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Shiro -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600" alt="Shiro">
-            <div class="card-body">
-                <div class="card-title">Shiro</div>
-                <div class="card-price">280 BIRR</div>
-                <div class="card-desc">Chickpea flour stew with berbere and garlic</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Tegabino -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Tegabino">
-            <div class="card-body">
-                <div class="card-title">Tegabino</div>
-                <div class="card-price">340 BIRR</div>
-                <div class="card-desc">Beef stew with Ethiopian spices</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Timatim Lebleb -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Timatim Lebleb">
-            <div class="card-body">
-                <div class="card-title">Timatim Lebleb</div>
-                <div class="card-price">200 BIRR</div>
-                <div class="card-desc">Fresh tomato salad with onions and jalapenos</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Timatim Kurt -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Timatim Kurt">
-            <div class="card-body">
-                <div class="card-title">Timatim Kurt</div>
-                <div class="card-price">200 BIRR</div>
-                <div class="card-desc">Chopped tomato and onion salad</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Pasta with Tomato Sauce -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Pasta with Tomato Sauce">
-            <div class="card-body">
-                <div class="card-title">Pasta with Tomato Sauce</div>
-                <div class="card-price">280 BIRR</div>
-                <div class="card-desc">Spaghetti with rich tomato sauce</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Pasta with Vegetables -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Pasta with Vegetables">
-            <div class="card-body">
-                <div class="card-title">Pasta with Vegetables</div>
-                <div class="card-price">320 BIRR</div>
-                <div class="card-desc">Pasta tossed with fresh mixed vegetables</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Tibs -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Tibs">
-            <div class="card-body">
-                <div class="card-title">Tibs</div>
-                <div class="card-price">480 BIRR</div>
-                <div class="card-desc">Sautéed beef with onions, tomatoes, and jalapenos</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Chikina Tibs -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Chikina Tibs">
-            <div class="card-body">
-                <div class="card-title">Chikina Tibs</div>
-                <div class="card-price">580 BIRR</div>
-                <div class="card-desc">Sautéed chicken with Ethiopian spices</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Tibs Firfir -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Tibs Firfir">
-            <div class="card-body">
-                <div class="card-title">Tibs Firfir</div>
-                <div class="card-price">390 BIRR</div>
-                <div class="card-desc">Injera mixed with spicy tibs sauce and meat</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Quanta Firfir -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="Quanta Firfir">
-            <div class="card-body">
-                <div class="card-title">Quanta Firfir</div>
-                <div class="card-price">420 BIRR</div>
-                <div class="card-desc">Dried beef mixed with injera and berbere</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Dulet -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Dulet">
-            <div class="card-body">
-                <div class="card-title">Dulet</div>
-                <div class="card-price">340 BIRR</div>
-                <div class="card-desc">Minced meat, liver, and tripe with Ethiopian spices</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-        <!-- Bozena Shiro -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600" alt="Bozena Shiro">
-            <div class="card-body">
-                <div class="card-title">Bozena Shiro</div>
-                <div class="card-price">400 BIRR</div>
-                <div class="card-desc">Shiro with tender beef cubes</div>
-                <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="changeQty(this, -1)">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1" max="20">
-                    <button class="quantity-btn" onclick="changeQty(this, 1)">+</button>
-                </div>
-                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
-            </div>
-        </div>
-    </div>
+    <div class="menu-grid" id="lunch-grid"></div>
 
     <!-- ==================== BURGERS & SANDWICHES ==================== -->
     <div class="section-header">
         <h2 class="section-title" id="burgers">🍔 Burgers & Sandwiches</h2>
     </div>
-    <div class="menu-grid">
-        <!-- Egg Sandwich -->
-        <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Egg Sandwich">
-            <div class="card-body">
-               
+    <div class="menu-grid" id="burgers-grid"></div>
+
+    <!-- ==================== BEVERAGES ==================== -->
+    <div class="section-header">
+        <h2 class="section-title" id="beverages">🥤 Beverages & Soft Drinks</h2>
+    </div>
+    <div class="menu-grid" id="beverages-grid"></div>
+
+    <!-- ==================== BEER ==================== -->
+    <div class="section-header">
+        <h2 class="section-title">🍺 Beer</h2>
+    </div>
+    <div class="menu-grid" id="beer-grid"></div>
+
+    <!-- ==================== HOT DRINKS ==================== -->
+    <div class="section-header">
+        <h2 class="section-title" id="hotdrinks">☕ Hot Drinks</h2>
+    </div>
+    <div class="menu-grid" id="hotdrinks-grid"></div>
+
+    <!-- ==================== EXTRAS ==================== -->
+    <div class="section-header">
+        <h2 class="section-title">➕ Extras</h2>
+    </div>
+    <div class="menu-grid" id="extras-grid"></div>
+
+    <div class="vat-notice">
+        ⚠️ Prices do not include 15% VAT. All dishes prepared with 100% Teff, 100% Niger seed oil, 100% homemade clarified butter.
+    </div>
+</div>
+
+<footer>
+    <p>Yetedla Cafe & Restaurant | Authentic Ethiopian Cuisine</p>
+    <p>📍 Addis Ababa, Ethiopia | 📞 0902017579 / 0984512167</p>
+    <div class="powered-by">Powered by <a href="https://addispower.netlify.app/" target="_blank">Addis Power</a> – AI & Web Solutions</div>
+</footer>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3>Your Order</h3>
+        <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <p style="text-align:center; color:#999;">Cart is empty</p>
+    </div>
+    <div class="cart-total">
+        <h4>Total: <span id="cartTotal">0</span> BIRR</h4>
+        <button class="checkout-btn" onclick="showPaymentModal()">Proceed to Payment</button>
+        <p style="font-size:0.7rem; text-align:center; margin-top:0.5rem;">VAT (15%) will be added at checkout</p>
+    </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="payment-modal" id="paymentModal">
+    <h3>💳 Select Payment Method</h3>
+    
+    <div class="payment-option" onclick="selectPayment('telebirr')">
+        <strong>📱 Telebirr</strong>
+        <p>Pay using Telebirr mobile money</p>
+    </div>
+    
+    <div class="payment-option" onclick="selectPayment('bank')">
+        <strong>🏦 Bank Transfer</strong>
+        <p>Pay via Commercial Bank of Ethiopia</p>
+    </div>
+    
+    <div class="payment-details" id="paymentDetails" style="display:none;"></div>
+    
+    <button class="close-modal" onclick="closePaymentModal()">Cancel</button>
+</div>
+
+<script>
+    // ==================== REAL MENU DATA ====================
+    const menuData = {
+        breakfast: [
+            { name: "Scrambled Egg", price: 300, desc: "Classic scrambled eggs, fluffy and delicious", img: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=400" },
+            { name: "Scrambled Egg with Tomato", price: 300, desc: "Eggs scrambled with fresh tomatoes and onions", img: "https://images.unsplash.com/photo-1525351486363-ef0f249b2bfe?w=400" },
+            { name: "Scrambled Egg with Beef", price: 380, desc: "Eggs scrambled with minced beef, tomatoes, and onions", img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400" },
+            { name: "Normal Chechebsa", price: 200, desc: "Traditional shredded flatbread with spiced butter", img: "https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=400" },
+            { name: "Special Chechebsa", price: 250, desc: "Chechebsa with extra honey and yogurt topping", img: "https://images.unsplash.com/photo-1627662116554-00d9c9f2523c?w=400" },
+            { name: "Normal Ful", price: 200, desc: "Fava beans stewed with cumin, garlic, and olive oil", img: "https://images.unsplash.com/photo-1590779032700-8d3b2c3e17e9?w=400" },
+            { name: "Special Ful", price: 250, desc: "Ful with egg, cheese, and fresh vegetables", img: "https://images.unsplash.com/photo-1590779032700-8d3b2c3e17e9?w=400" },
+            { name: "Normal Flour", price: 200, desc: "Traditional flour-based breakfast dish", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" },
+            { name: "Special Flour", price: 250, desc: "Flour dish with spiced butter and honey", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" }
+        ],
+        lunch: [
+            { name: "Fasting Firfir", price: 280, desc: "Injera mixed with spicy berbere sauce, vegan", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" },
+            { name: "Shiro", price: 280, desc: "Chickpea flour stew with berbere and garlic", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" },
+            { name: "Tegabino", price: 340, desc: "Beef stew with Ethiopian spices", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400" },
+            { name: "Timatim Lebleb", price: 200, desc: "Fresh tomato salad with onions and jalapenos", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" },
+            { name: "Timatim Kurt", price: 200, desc: "Chopped tomato and onion salad", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" },
+            { name: "Pasta with Tomato Sauce", price: 280, desc: "Spaghetti with rich tomato sauce", img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400" },
+            { name: "Pasta with Vegetables", price: 320, desc: "Pasta tossed with fresh mixed vegetables", img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400" },
+            { name: "Tibs", price: 480, desc: "Sautéed beef with onions, tomatoes, and jalapenos", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400" },
+            { name: "Chikina Tibs", price: 580, desc: "Sautéed chicken with Ethiopian spices", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400" },
+            { name: "Tibs Firfir", price: 390, desc: "Injera mixed with spicy tibs sauce and meat", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" },
+            { name: "Quanta Firfir", price: 420, desc: "Dried beef mixed with injera and berbere", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" },
+            { name: "Dulet", price: 340, desc: "Minced meat, liver, and tripe with Ethiopian spices", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400" },
+            { name: "Bozena Shiro", price: 400, desc: "Shiro with tender beef cubes", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" }
+        ],
+        burgers: [
+            { name: "Egg Sandwich", price: 250, desc: "Fresh egg sandwich on toasted bread", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" },
+            { name: "Beef & Cheese Sandwich", price: 250, desc: "Grilled beef with melted cheese", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" },
+            { name: "Tuna Sandwich", price: 300, desc: "Tuna salad sandwich with fresh vegetables", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" },
+            { name: "Beef Burger", price: 300, desc: "Single beef patty, lettuce, tomato, mayonnaise", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" },
+            { name: "Cheese Burger", price: 350, desc: "Single patty with cheese, lettuce, tomato, mayo", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" },
+            { name: "Double Burger", price: 480, desc: "2 patties, 2 cheese, lettuce, tomato, mayonnaise", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" },
+            { name: "Triple Stack", price: 580, desc: "3 beef patties, 3 cheese, lettuce, tomato, mayo", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" },
+            { name: "Double BBQ Sandwich", price: 450, desc: "2 patties, 2 cheese, caramelized onion, BBQ sauce", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" },
+            { name: "Double Honey Mustard Sandwich", price: 450, desc: "2 patties, 2 cheese, honey mustard sauce", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" },
+            { name: "French Fries", price: 200, desc: "Crispy golden french fries", img: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=400" }
+        ],
+        beverages: [
+            { name: "Soft Drinks", price: 75, desc: "Coke, Sprite, Fanta, and more", img: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=400" },
+            { name: "0.5 L Water", price: 40, desc: "Pure bottled water (500ml)", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400" },
+            { name: "1 L Water", price: 60, desc: "Pure bottled water (1 liter)", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400" },
+            { name: "Nigus", price: 90, desc: "Energy drink", img: "https://images.unsplash.com/photo-1615994423323-6b3d9c6cd6a6?w=400" },
+            { name: "Sofi Malt", price: 90, desc: "Non-alcoholic malt drink", img: "https://images.unsplash.com/photo-1615994423323-6b3d9c6cd6a6?w=400" },
+            { name: "Ambo Water", price: 70, desc: "Premium Ethiopian mineral water", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400" }
+        ],
+        beer: [
+            { name: "Heineken", price: 120, desc: "Premium international lager", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "H-B / Arada", price: 120, desc: "Ethiopian craft beer", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "Harar", price: 100, desc: "Classic Ethiopian beer", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "Habesha", price: 100, desc: "Popular Ethiopian lager", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "Castle", price: 100, desc: "South African lager", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "Bedele", price: 100, desc: "Classic Ethiopian beer", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "Special Bedele", price: 120, desc: "Premium Bedele beer", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" },
+            { name: "St. George", price: 100, desc: "Iconic Ethiopian beer", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" }
+        ],
+        hotdrinks: [
+            { name: "Traditional Coffee", price: 50, desc: "Ethiopian coffee ceremony style", img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400" },
+            { name: "Steamed Coffee", price: 60, desc: "Smooth steamed coffee", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Regular Coffee", price: 80, desc: "Freshly brewed coffee", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Milk", price: 110, desc: "Warm or cold fresh milk", img: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400" },
+            { name: "Milk with Coffee", price: 135, desc: "Coffee blended with fresh milk", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Café Latte", price: 150, desc: "Espresso with steamed milk", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Tea", price: 50, desc: "Classic Ethiopian tea", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Flavored Tea", price: 70, desc: "Tea with natural flavors", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Tea with Lemon", price: 150, desc: "Tea infused with fresh lemon", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Tea with Coffee", price: 70, desc: "Unique tea-coffee blend", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Tea with Alcohol", price: 170, desc: "Spiked tea with spirits", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Ginger Tea", price: 60, desc: "Fresh ginger-infused tea", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Macchiato", price: 110, desc: "Espresso with a touch of milk", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Orange Tea", price: 80, desc: "Tea with orange essence", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Hot Chocolate", price: 200, desc: "Rich creamy hot chocolate", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=400" },
+            { name: "Iced Latte", price: 150, desc: "Chilled latte over ice", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Feasting Macchiato", price: 120, desc: "Special holiday macchiato", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Green Tea", price: 70, desc: "Healthy green tea", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Caramel Hot Drink", price: 200, desc: "Warm caramel beverage", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Caramel Macchiato", price: 200, desc: "Macchiato with caramel", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" },
+            { name: "Cappuccino", price: 200, desc: "Classic Italian cappuccino", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400" }
+        ],
+        extras: [
+            { name: "Extra Injera", price: 20, desc: "Additional injera bread", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" },
+            { name: "Extra Bread", price: 35, desc: "Fresh bread slices", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" },
+            { name: "Extra Ketchup", price: 30, desc: "Ketchup serving", img: "https://images.unsplash.com/photo-1599778392037-92d095a9d2a1?w=400" },
+            { name: "Extra Mayonnaise", price: 40, desc: "Mayonnaise serving", img: "https://images.unsplash.com/photo-1599778392037-92d095a9d2a1?w=400" },
+            { name: "Extra BBQ Sauce", price: 50, desc: "BBQ sauce serving", img: "https://images.unsplash.com/photo-1599778392037-92d095a
