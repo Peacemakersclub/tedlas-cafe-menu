@@ -120,41 +120,68 @@
 </div>
 
 <script>
-    // Base URL for images (GitHub raw)
-    const imgBase = 'https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/main/';
-    const rawSuffix = '?raw=true';
+    // Direct raw image URLs from GitHub
+    const images = {
+        // Breakfast
+        "kinche-butter": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/kinche-with-honey.jpg?raw=true",
+        "kinche-olive": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/c76190150bde4dce68b7a541a04aa6609f62f505/kinche-with-olive-oil.jpg?raw=true",
+        "scrambled-eggs": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-eggs%20.jpg?raw=true",
+        "scrambled-beef": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-egg-with-beef%20.jpeg?raw=true",
+        "chechebsa": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/chechebsa.jpg?raw=true",
+        "dirkosh": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/dirkosh-firfir.jpg?raw=true",
+        // Lunch
+        "dinch-siga": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/dinch-be-siga.jpg?raw=true",
+        "yechikina": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/yechikina-tibis.jpg?raw=true",
+        "tibis-firfir": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tibis-firfir.jpg?raw=true",
+        "fasting-plater": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/fasting-plater-vegetarian.jpg?raw=true",
+        "shiro": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/shiro.jpg?raw=true",
+        // Sides
+        "karya": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/karya-sineg.PNG?raw=true",
+        "dinich-kitf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/dinch-kitf.jpg?raw=true",
+        "timatim": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/timatim-kurit.jpg?raw=true",
+        "ayib": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/ayib-bemitmita.jpg?raw=true",
+        "yesuf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/yesuf-fitfit.jpg?raw=true",
+        // Beverages
+        "traditional-coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/traditional-coffee.jpg?raw=true",
+        "coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/0aa121727a17f12719d1bff7d7ceab890e1635d9/coffee.jpg?raw=true",
+        "macchiato": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/macchiato.jpg?raw=true",
+        "tea": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tea-black-green-ginger.jpg?raw=true",
+        "water": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/water.jpg?raw=true",
+        "soft-drinks": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/soft-drinks.jpg?raw=true",
+        "beer": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/beer.jpg?raw=true"
+    };
 
     const menuData = {
         breakfast: [
-            { name: "Kinche (with homemade butter)", price: 500, desc: "Steel cut oats, egg, homemade butter", img: "kinche-with-honey.jpg" },
-            { name: "Kinche (with olive oil)", price: 400, desc: "Steel cut oats with olive oil", img: "kinche.jpg" },
-            { name: "Scrambled Eggs", price: 400, desc: "Eggs with onion, tomato, jalapenos", img: "scrambled-egg-with-beef.jpeg" },
-            { name: "Scrambled Eggs with Minced Meat", price: 500, desc: "Eggs, minced meat, onion, tomato, jalapenos", img: "scrambled-eggs-with-minchid-meat.jpg" },
-            { name: "Chechebsa", price: 500, desc: "Red teff, wheat flour, spiced butter, yogurt & honey", img: "chechebsa.jpg" },
-            { name: "Dirkosh Firfir", price: 700, desc: "Dirkosh spiced stew with homemade butter", img: "dirkosh-firfir.jpg" }
+            { name: "Kinche (with homemade butter)", price: 500, desc: "Steel cut oats, egg, homemade butter", img: images["kinche-butter"] },
+            { name: "Kinche (with olive oil)", price: 400, desc: "Steel cut oats with olive oil", img: images["kinche-olive"] },
+            { name: "Scrambled Eggs", price: 400, desc: "Eggs with onion, tomato, jalapenos", img: images["scrambled-eggs"] },
+            { name: "Scrambled Eggs with Minced Meat", price: 500, desc: "Eggs, minced meat, onion, tomato, jalapenos", img: images["scrambled-beef"] },
+            { name: "Chechebsa", price: 500, desc: "Red teff, wheat flour, spiced butter, yogurt & honey", img: images["chechebsa"] },
+            { name: "Dirkosh Firfir", price: 700, desc: "Dirkosh spiced stew with homemade butter", img: images["dirkosh"] }
         ],
         lunch: [
-            { name: "Dinch be Siga", price: 700, desc: "Potato, beef meat, spiced stew, homemade butter", img: "dinch-be-siga.jpg" },
-            { name: "Yechikina Tibis", price: 900, desc: "Stir-fried beef with tomato, onion, jalapenos", img: "yechikina-tibis.jpg" },
-            { name: "Tibis Firfir", price: 700, desc: "Injera with beef filet, onion, tomato, jalapenos, chili curry", img: "tibis-firfir.jpg" },
-            { name: "Fasting Plater (Vegetarian)", price: 700, desc: "Lentils, chickpea, cabbage, sunflower seeds, tomato salad", img: "fasting-plater-vegetarian.jpg" },
-            { name: "Shiro", price: 400, desc: "Chickpea flour stew", img: "shiro.jpg" }
+            { name: "Dinch be Siga", price: 700, desc: "Potato, beef meat, spiced stew, homemade butter", img: images["dinch-siga"] },
+            { name: "Yechikina Tibis", price: 900, desc: "Stir-fried beef with tomato, onion, jalapenos", img: images["yechikina"] },
+            { name: "Tibis Firfir", price: 700, desc: "Injera with beef filet, onion, tomato, jalapenos, chili curry", img: images["tibis-firfir"] },
+            { name: "Fasting Plater (Vegetarian)", price: 700, desc: "Lentils, chickpea, cabbage, sunflower seeds, tomato salad", img: images["fasting-plater"] },
+            { name: "Shiro", price: 400, desc: "Chickpea flour stew", img: images["shiro"] }
         ],
         sides: [
-            { name: "Karya Singe (3 pieces)", price: 300, desc: "Ethiopian potato, fried onion, jalapenos", img: "karya-sineg.PNG" },
-            { name: "Dinich Kitf", price: 200, desc: "Ethiopian potato, fried onion, jalapenos", img: "dinch-kitf.jpg" },
-            { name: "Tomato Salad (Timatim Kurit)", price: 400, desc: "Tomato salad, onion, jalapenos", img: "timatim-kurit.jpg" },
-            { name: "Ayib Bemitmita", price: 400, desc: "Cheese with spiced homemade butter", img: "ayib-bemitmita.jpg" },
-            { name: "Yesuf Fitfit", price: 400, desc: "Sunflower seed milk, tomato salad, jalapenos with sauce", img: "yesuf-fitfit.jpg" }
+            { name: "Karya Singe (3 pieces)", price: 200, desc: "Ethiopian potato, fried onion, jalapenos", img: images["karya"] },
+            { name: "Dinich Kitf", price: 300, desc: "Ethiopian potato, fried onion, jalapenos", img: images["dinich-kitf"] },
+            { name: "Tomato Salad (Timatim Kurit)", price: 300, desc: "Tomato salad, onion, jalapenos", img: images["timatim"] },
+            { name: "Ayib Bemitmita", price: 400, desc: "Cheese with spiced homemade butter", img: images["ayib"] },
+            { name: "Yesuf Fitfit", price: 400, desc: "Sunflower seed milk, tomato salad, jalapenos with sauce", img: images["yesuf"] }
         ],
         beverages: [
-            { name: "Traditional Coffee", price: 70, desc: "Ethiopian coffee ceremony style", img: "traditional-coffee.jpg" },
-            { name: "Coffee", price: 120, desc: "Freshly brewed coffee", img: "coffee.jpg" },
-            { name: "Macchiato", price: 100, desc: "Espresso with a touch of steamed milk", img: "macchiato.jpg" },
-            { name: "Tea", price: 70, desc: "Black, green, or ginger tea", img: "tea-black-green-ginger.jpg" },
-            { name: "Water (1 Liter)", price: 70, desc: "Pure bottled water", img: "water.jpg" },
-            { name: "Soft Drinks", price: 80, desc: "Coke, Sprite, Fanta, and more", img: "soft-drinks.jpg" },
-            { name: "Beer", price: 140, desc: "Cold and refreshing local beer", img: "beer.jpg" }
+            { name: "Traditional Coffee", price: 70, desc: "Ethiopian coffee ceremony style", img: images["traditional-coffee"] },
+            { name: "Coffee", price: 100, desc: "Freshly brewed coffee", img: images["coffee"] },
+            { name: "Macchiato", price: 120, desc: "Espresso with a touch of steamed milk", img: images["macchiato"] },
+            { name: "Tea", price: 70, desc: "Black, green, or ginger tea", img: images["tea"] },
+            { name: "Water (1 Liter)", price: 80, desc: "Pure bottled water", img: images["water"] },
+            { name: "Soft Drinks", price: 80, desc: "Coke, Sprite, Fanta, and more", img: images["soft-drinks"] },
+            { name: "Beer", price: 140, desc: "Cold and refreshing local beer", img: images["beer"] }
         ]
     };
 
@@ -165,7 +192,7 @@
         if (!container) return;
         container.innerHTML = menuData[category].map(item => `
             <div class="card">
-                <img class="card-img" src="${imgBase}${item.img}${rawSuffix}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400'">
+                <img class="card-img" src="${item.img}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400'">
                 <div class="card-body">
                     <div class="card-title">${item.name}</div>
                     <div class="card-price">${item.price} BIRR</div>
