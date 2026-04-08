@@ -423,3 +423,23 @@
         let total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
         let vat = total * 0.15;
         let grandTotal = total + vat;
+        let orderSummary = cart.map(i => `${i.name} x${i.qty} - ${i.price * i.qty} BIRR`).join('\n');
+        let detailsDiv = document.getElementById('paymentDetails');
+        if (method === 'telebirr') {
+            detailsDiv.innerHTML = `<strong>📱 Telebirr Payment</strong><br><br>📞 Number: <strong>0911405114</strong><br>👤 Name: <strong>Tirsit Abay</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br>📋 Order:<br><pre style="font-size:0.7rem;">${orderSummary}</pre><br><button class="copy-btn" onclick="copyToClipboard('0911405114')">Copy Number</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
+        } else {
+            detailsDiv.innerHTML = `<strong>🏦 Bank Transfer</strong><br><br>🏛️ Bank: <strong>Commercial Bank of Ethiopia</strong><br>🔢 Account: <strong>1000730659214</strong><br>👤 Name: <strong>Yetedla Cafe & Restaurant</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br>📋 Order:<br><pre style="font-size:0.7rem;">${orderSummary}</pre><br><button class="copy-btn" onclick="copyToClipboard('1000730659214')">Copy Account</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
+        }
+        detailsDiv.style.display = 'block';
+    }
+
+    function copyToClipboard(text) { navigator.clipboard.writeText(text); alert('Copied: ' + text); }
+    function confirmOrder() { alert('✅ Order confirmed! Thank you for ordering from Tedla\'s Cafe & Restaurant.\n\nWe will contact you shortly.'); cart = []; updateCart(); closePaymentModal(); toggleCart(); }
+
+    renderMenu('breakfast', 'breakfast-grid');
+    renderMenu('lunch', 'lunch-grid');
+    renderMenu('sides', 'sides-grid');
+    renderMenu('beverages', 'beverages-grid');
+</script>
+</body>
+</html>
