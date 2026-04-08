@@ -109,25 +109,6 @@
             line-height: 1.4;
             margin-bottom: 1rem;
         }
-        .call-btn {
-            background: #2c1810;
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-        .call-btn:hover {
-            background: #d4a373;
-            color: #2c1810;
-        }
         .delivery-badge {
             background: #e6d5c0;
             color: #2c1810;
@@ -237,7 +218,7 @@
             </div>
         </div>
         
-        <!-- Pickup Card - NO image, NO 10% badge -->
+        <!-- Pickup Card - NO image, NO badge -->
         <div class="service-card">
             <div class="service-icon-large">🏪</div>
             <div class="service-title">Easy Pickup</div>
@@ -293,37 +274,48 @@
 </div>
 
 <script>
+    // ==================== ALL UPDATED IMAGES ====================
     const images = {
-        "kinche-butter": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/kinche-with-honey.jpg?raw=true",
-        "kinche-olive": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/c76190150bde4dce68b7a541a04aa6609f62f505/kinche-with-olive-oil.jpg?raw=true",
-        "scrambled-eggs": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/ec0d4e147d89f48c0cd854092062a1bb7320e9de/scrambled-Eggs.PNG?raw=true",
+        // Breakfast - NEW Kinche be Enkulal + updated images
+        "kinche-butter": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-homemade-butte.jpg?raw=true",
+        "kinche-olive": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-with-olive-oil.jpg?raw=true",
+        "kinche-enkulal": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-be-enkualale.jpg?raw=true",
+        "scrambled-eggs": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/Scrambled%20Eggs.jpg?raw=true",
         "scrambled-beef": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-egg-with-beef%20.jpeg?raw=true",
         "chechebsa": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/chechebsa.jpg?raw=true",
-        "dirkosh": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/dirkosh-firfir.jpg?raw=true",
-        "dinch-siga": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/dinch-be-siga.jpg?raw=true",
+        "dirkosh": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/dirkosh-firfir.jpg?raw=true",
+        
+        // Lunch - updated images
+        "dinch-siga": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/dinch-wote-be-siga.jpg?raw=true",
         "yechikina": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9af033adc2cc77d0633cef4d9f0d2b082ffde494/yechikina-tibis.jpg?raw=true",
         "tibis-firfir": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tibis-firfir.jpg?raw=true",
-        "fasting-plater": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/fasting-plater-vegetarian.jpg?raw=true",
+        "fasting-plater": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/fasting-plater-vegetarian.jpg?raw=true",
         "shiro": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/shiro.jpg?raw=true",
+        "mahberawi": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/bc22f3928b7f99c96c1f6bbdcf886be1f4ba4791/mahberawi-yefisk.jpg?raw=true",
+        
+        // Sides - updated Yesuf Fitfit
         "karya": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/karya-sineg.PNG?raw=true",
         "dinich-kitf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/ba6cccc5a711a35068f017ec29ee224a5038857b/dinich-kitef.jpg?raw=true",
         "timatim": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/timatim-kurit.jpg?raw=true",
         "ayib": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/ayib-bemitmita.jpg?raw=true",
-        "yesuf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/yesuf-fitfit.jpg?raw=true",
-        "traditional-coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/traditional-coffee.jpg?raw=true",
-        "coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/0aa121727a17f12719d1bff7d7ceab890e1635d9/coffee.jpg?raw=true",
-        "macchiato": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/macchiato.jpg?raw=true",
+        "yesuf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/yesuf-fitfit.jpg?raw=true",
+        
+        // Beverages - updated Traditional Coffee, Coffee, Macchiato
+        "traditional-coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/b59e576cd5cbeffb2af260956943a478872f367e/traditional-coffee.jpg?raw=true",
+        "coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/traditional-coffee.jpg?raw=true",
+        "macchiato": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/macchiato.jpg?raw=true",
         "tea": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tea-black-green-ginger.jpg?raw=true",
         "water": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/water.jpg?raw=true",
         "soft-drinks": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/soft-drinks.jpg?raw=true",
-        "beer": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/beer.jpg?raw=true",
-        "mahberawi": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/bc22f3928b7f99c96c1f6bbdcf886be1f4ba4791/mahberawi-yefisk.jpg?raw=true"
+        "beer": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/beer.jpg?raw=true"
     };
 
+    // ==================== UPDATED MENU DATA ====================
     const menuData = {
         breakfast: [
             { name: "Kinche (with homemade butter)", price: 500, desc: "Steel cut oats, egg, homemade butter", img: images["kinche-butter"] },
             { name: "Kinche (with olive oil)", price: 400, desc: "Steel cut oats with olive oil", img: images["kinche-olive"] },
+            { name: "Kinche be Enkulal", price: 550, desc: "Steel cut oats with egg, homemade butter & special spices", img: images["kinche-enkulal"] },
             { name: "Scrambled Eggs", price: 400, desc: "Eggs with onion, tomato, jalapenos", img: images["scrambled-eggs"] },
             { name: "Scrambled Eggs with Minced Meat", price: 500, desc: "Eggs, minced meat, onion, tomato, jalapenos", img: images["scrambled-beef"] },
             { name: "Chechebsa", price: 500, desc: "Red teff, wheat flour, spiced butter, yogurt & honey", img: images["chechebsa"] },
@@ -335,7 +327,7 @@
             { name: "Tibis Firfir", price: 700, desc: "Injera with beef filet, onion, tomato, jalapenos, chili curry", img: images["tibis-firfir"] },
             { name: "Fasting Plater (Vegetarian)", price: 700, desc: "Lentils, chickpea, cabbage, sunflower seeds, tomato salad", img: images["fasting-plater"] },
             { name: "Shiro", price: 400, desc: "Chickpea flour stew", img: images["shiro"] },
-            { name: "Mahberawi Yefisk", price: 1200, desc: "Grand mixed platter: combination of Tibs, Kitfo, Shiro, Gomen, Ayib & fresh salad. Serves 2-3 people.", img: images["mahberawi"] }
+            { name: "Mahberawi Yefisk", price: 1600, desc: "Grand mixed platter: combination of Tibs, Kitfo, Shiro, Gomen, Ayib & fresh salad. Serves 2-3 people.", img: images["mahberawi"] }
         ],
         sides: [
             { name: "Karya Singe (3 pieces)", price: 200, desc: "Ethiopian potato, fried onion, jalapenos", img: images["karya"] },
@@ -431,23 +423,3 @@
         let total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
         let vat = total * 0.15;
         let grandTotal = total + vat;
-        let orderSummary = cart.map(i => `${i.name} x${i.qty} - ${i.price * i.qty} BIRR`).join('\n');
-        let detailsDiv = document.getElementById('paymentDetails');
-        if (method === 'telebirr') {
-            detailsDiv.innerHTML = `<strong>📱 Telebirr Payment</strong><br><br>📞 Number: <strong>0911405114</strong><br>👤 Name: <strong>Tirsit Abay</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br>📋 Order:<br><pre style="font-size:0.7rem;">${orderSummary}</pre><br><button class="copy-btn" onclick="copyToClipboard('0911405114')">Copy Number</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
-        } else {
-            detailsDiv.innerHTML = `<strong>🏦 Bank Transfer</strong><br><br>🏛️ Bank: <strong>Commercial Bank of Ethiopia</strong><br>🔢 Account: <strong>1000730659214</strong><br>👤 Name: <strong>Yetedla Cafe & Restaurant</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br>📋 Order:<br><pre style="font-size:0.7rem;">${orderSummary}</pre><br><button class="copy-btn" onclick="copyToClipboard('1000730659214')">Copy Account</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
-        }
-        detailsDiv.style.display = 'block';
-    }
-
-    function copyToClipboard(text) { navigator.clipboard.writeText(text); alert('Copied: ' + text); }
-    function confirmOrder() { alert('✅ Order confirmed! Thank you for ordering from Tedla\'s Cafe & Restaurant.\n\nWe will contact you shortly.'); cart = []; updateCart(); closePaymentModal(); toggleCart(); }
-
-    renderMenu('breakfast', 'breakfast-grid');
-    renderMenu('lunch', 'lunch-grid');
-    renderMenu('sides', 'sides-grid');
-    renderMenu('beverages', 'beverages-grid');
-</script>
-</body>
-</html>
