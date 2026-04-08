@@ -52,7 +52,112 @@
         footer { background: #2c1810; color: #f5e6d3; text-align: center; padding: 1.5rem; margin-top: 2rem; }
         .powered-by { margin-top: 0.5rem; font-size: 0.75rem; }
         .powered-by a { color: #d4a373; text-decoration: none; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .cart-sidebar { width: 100%; right: -100%; } .navbar { flex-direction: column; gap: 0.5rem; } }
+        
+        /* NEW STYLES: Delivery Info Cards Section */
+        .services-section {
+            background: linear-gradient(135deg, #fff6ed 0%, #fef0e3 100%);
+            border-radius: 40px;
+            margin: 2rem auto 3rem auto;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .service-card {
+            background: white;
+            border-radius: 32px;
+            flex: 1;
+            min-width: 240px;
+            max-width: 320px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid rgba(212, 163, 115, 0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+            border-color: #d4a373;
+        }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f4e9de;
+            transition: transform 0.4s;
+        }
+        .service-card:hover .service-img {
+            transform: scale(1.02);
+        }
+        .service-body {
+            padding: 1.6rem;
+            text-align: center;
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2c1810;
+            margin-bottom: 0.75rem;
+        }
+        .service-desc {
+            color: #5a3e2e;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+        .service-feature {
+            background: #fdf8f2;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #d4a373;
+            margin-top: 0.5rem;
+        }
+        .reservation-btn {
+            background: #2c1810;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .reservation-btn:hover {
+            background: #d4a373;
+            color: #2c1810;
+        }
+        
+        /* delivery specific badge */
+        .delivery-badge {
+            background: #e6d5c0;
+            color: #2c1810;
+            font-size: 0.7rem;
+            border-radius: 20px;
+            padding: 0.2rem 0.8rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2rem; } 
+            .cart-sidebar { width: 100%; right: -100%; } 
+            .navbar { flex-direction: column; gap: 0.5rem; }
+            .services-grid { gap: 1.2rem; }
+            .service-card { min-width: 220px; }
+        }
     </style>
 </head>
 <body>
@@ -73,9 +178,58 @@
         <li><a href="#beverages">Beverages</a></li>
     </ul>
     <div class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
-</nav>
+</div>
 
 <div class="container">
+    <!-- ========== NEW SERVICE SECTION: Delivery, Pickup, Table & Backyard Reservation ========== -->
+    <div class="services-section" id="services">
+        <div class="section-header">
+            <h2 class="section-title" style="border-bottom-color:#b88b5a;">✨ Our Services</h2>
+        </div>
+        <div class="services-grid">
+            <!-- Delivery Card -->
+            <div class="service-card">
+                <img class="service-img" src="https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/51389d3c5c6af4304905f4e11e1a5aad054b2eb6/tedlas-cafe-and-restaurant-delivery.png?raw=true" alt="Delivery Service" onerror="this.src='https://images.unsplash.com/photo-1601924582970-9238bcb495d9?w=400'">
+                <div class="service-body">
+                    <div class="service-icon">🚚</div>
+                    <div class="service-title">Fast Delivery</div>
+                    <div class="service-desc">Hot & fresh Ethiopian dishes delivered to your doorstep. Free delivery within 5km. Order now and enjoy authentic flavors at home.</div>
+                    <div class="delivery-badge">⏱️ 30-45 min • Free tracking</div>
+                </div>
+            </div>
+            <!-- Pickup Card -->
+            <div class="service-card">
+                <img class="service-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500" alt="Pickup Service" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400'">
+                <div class="service-body">
+                    <div class="service-icon">🏪</div>
+                    <div class="service-title">Easy Pickup</div>
+                    <div class="service-desc">Order online and pick up at our restaurant. Skip the line, just grab your meal and enjoy. Quick & contactless.</div>
+                    <div class="delivery-badge">📍 10% off on pickup orders</div>
+                </div>
+            </div>
+            <!-- Table Reservation Card -->
+            <div class="service-card">
+                <img class="service-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500" alt="Table Reservation" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400'">
+                <div class="service-body">
+                    <div class="service-icon">🍽️</div>
+                    <div class="service-title">Table Reservation</div>
+                    <div class="service-desc">Reserve your cozy table for family dinner, business lunch or celebrations. We accommodate groups and special occasions.</div>
+                    <button class="reservation-btn" onclick="openReservationModal()">📅 Book a Table</button>
+                </div>
+            </div>
+            <!-- Backyard Space Reservation Card -->
+            <div class="service-card">
+                <img class="service-img" src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=500" alt="Backyard Garden" onerror="this.src='https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400'">
+                <div class="service-body">
+                    <div class="service-icon">🌿</div>
+                    <div class="service-title">Backyard Space</div>
+                    <div class="service-desc">Enjoy our peaceful backyard garden with traditional seating. Perfect for coffee ceremonies, events, and private gatherings.</div>
+                    <button class="reservation-btn" onclick="openBackyardModal()">🌳 Reserve Backyard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- BREAKFAST -->
     <div class="section-header"><h2 class="section-title" id="breakfast">☀️ Breakfast</h2></div>
     <div class="menu-grid" id="breakfast-grid"></div>
@@ -101,7 +255,7 @@
 <footer>
     <p>Tedla's Cafe & Restaurant | Authentic Ethiopian Cuisine</p>
     <p>📍 Addis Ababa, Ethiopia | 📞 0902017579 / 0984512167</p>
-    <div class="powered-by">Powered by <a href="https://addispower.netlify.app/" target="_blank">Addis Power</a> – AI & Web Solutions</div>
+    <div class="powered-by">Powered by <a href="https://addispowerwebsolution.pages.dev/" target="_blank">Addis Power Web Solution</a> – AI & Web Solutions</div>
 </footer>
 
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
@@ -119,29 +273,58 @@
     <button class="close-modal" onclick="closePaymentModal()">Cancel</button>
 </div>
 
+<!-- Reservation Modals (Table + Backyard) -->
+<div class="payment-modal" id="tableReservationModal" style="max-width: 450px;">
+    <h3>🍽️ Reserve a Table</h3>
+    <div style="margin-top: 1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Full Name</label>
+        <input type="text" id="tableName" placeholder="Your name" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Phone Number</label>
+        <input type="tel" id="tablePhone" placeholder="09xxxxxxxx" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Date & Time</label>
+        <input type="datetime-local" id="tableDateTime" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Number of Guests</label>
+        <input type="number" id="tableGuests" min="1" value="2" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <button class="checkout-btn" onclick="confirmTableReservation()" style="margin-top:0.3rem;">✅ Confirm Reservation</button>
+        <button class="close-modal" onclick="closeTableModal()">Cancel</button>
+    </div>
+</div>
+
+<div class="payment-modal" id="backyardReservationModal" style="max-width: 450px;">
+    <h3>🌳 Backyard Space Reservation</h3>
+    <div style="margin-top: 1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Full Name / Organization</label>
+        <input type="text" id="backyardName" placeholder="Your name" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Phone Number</label>
+        <input type="tel" id="backyardPhone" placeholder="09xxxxxxxx" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Event Date & Time</label>
+        <input type="datetime-local" id="backyardDateTime" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <label style="display:block; margin-bottom:0.5rem;">Expected Guests / Occasion</label>
+        <input type="text" id="backyardOccasion" placeholder="Birthday, meeting, coffee ceremony..." style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #ddd; margin-bottom:1rem;">
+        <button class="checkout-btn" onclick="confirmBackyardReservation()" style="margin-top:0.3rem;">🌿 Reserve Backyard</button>
+        <button class="close-modal" onclick="closeBackyardModal()">Cancel</button>
+    </div>
+</div>
+
 <script>
-    // Direct raw image URLs from GitHub
+    // Direct raw image URLs from GitHub (preserved)
     const images = {
-        // Breakfast
         "kinche-butter": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/kinche-with-honey.jpg?raw=true",
         "kinche-olive": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/c76190150bde4dce68b7a541a04aa6609f62f505/kinche-with-olive-oil.jpg?raw=true",
         "scrambled-eggs": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-eggs%20.jpg?raw=true",
         "scrambled-beef": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-egg-with-beef%20.jpeg?raw=true",
         "chechebsa": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/chechebsa.jpg?raw=true",
         "dirkosh": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/dirkosh-firfir.jpg?raw=true",
-        // Lunch
         "dinch-siga": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/dinch-be-siga.jpg?raw=true",
         "yechikina": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/yechikina-tibis.jpg?raw=true",
         "tibis-firfir": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tibis-firfir.jpg?raw=true",
         "fasting-plater": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/fasting-plater-vegetarian.jpg?raw=true",
         "shiro": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/shiro.jpg?raw=true",
-        // Sides
         "karya": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/karya-sineg.PNG?raw=true",
         "dinich-kitf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/dinch-kitf.jpg?raw=true",
         "timatim": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/timatim-kurit.jpg?raw=true",
         "ayib": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/ayib-bemitmita.jpg?raw=true",
         "yesuf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/yesuf-fitfit.jpg?raw=true",
-        // Beverages
         "traditional-coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/traditional-coffee.jpg?raw=true",
         "coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/0aa121727a17f12719d1bff7d7ceab890e1635d9/coffee.jpg?raw=true",
         "macchiato": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/macchiato.jpg?raw=true",
@@ -273,6 +456,40 @@
 
     function copyToClipboard(text) { navigator.clipboard.writeText(text); alert('Copied: ' + text); }
     function confirmOrder() { alert('✅ Order confirmed! Thank you for ordering from Tedla\'s Cafe & Restaurant.\n\nWe will contact you shortly.'); cart = []; updateCart(); closePaymentModal(); toggleCart(); }
+
+    // Reservation Modals logic
+    function openReservationModal() { document.getElementById('tableReservationModal').style.display = 'block'; }
+    function closeTableModal() { document.getElementById('tableReservationModal').style.display = 'none'; }
+    function openBackyardModal() { document.getElementById('backyardReservationModal').style.display = 'block'; }
+    function closeBackyardModal() { document.getElementById('backyardReservationModal').style.display = 'none'; }
+    
+    function confirmTableReservation() {
+        let name = document.getElementById('tableName').value.trim();
+        let phone = document.getElementById('tablePhone').value.trim();
+        let dateTime = document.getElementById('tableDateTime').value;
+        let guests = document.getElementById('tableGuests').value;
+        if(!name || !phone || !dateTime) { alert('Please fill all required fields (Name, Phone, Date & Time)'); return; }
+        alert(`✅ Table Reserved!\nName: ${name}\nPhone: ${phone}\nDate/Time: ${dateTime}\nGuests: ${guests}\n\nWe will send confirmation SMS shortly. Welcome to Tedla's Cafe!`);
+        closeTableModal();
+        document.getElementById('tableName').value = '';
+        document.getElementById('tablePhone').value = '';
+        document.getElementById('tableDateTime').value = '';
+        document.getElementById('tableGuests').value = '2';
+    }
+    
+    function confirmBackyardReservation() {
+        let name = document.getElementById('backyardName').value.trim();
+        let phone = document.getElementById('backyardPhone').value.trim();
+        let dateTime = document.getElementById('backyardDateTime').value;
+        let occasion = document.getElementById('backyardOccasion').value.trim();
+        if(!name || !phone || !dateTime) { alert('Please fill name, phone and date/time for backyard reservation'); return; }
+        alert(`🌿 Backyard Reserved!\nName: ${name}\nPhone: ${phone}\nDate/Time: ${dateTime}\nOccasion: ${occasion || 'Not specified'}\n\nOur team will contact you to confirm. Enjoy our beautiful garden!`);
+        closeBackyardModal();
+        document.getElementById('backyardName').value = '';
+        document.getElementById('backyardPhone').value = '';
+        document.getElementById('backyardDateTime').value = '';
+        document.getElementById('backyardOccasion').value = '';
+    }
 
     renderMenu('breakfast', 'breakfast-grid');
     renderMenu('lunch', 'lunch-grid');
