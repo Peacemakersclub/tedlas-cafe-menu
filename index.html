@@ -274,33 +274,36 @@
 </div>
 
 <script>
-    // ==================== ALL UPDATED IMAGES ====================
+    // ==================== ALL UPDATED IMAGES WITH CORRECT URLS ====================
     const images = {
-        // Breakfast - NEW Kinche be Enkulal + updated images
+        // Breakfast
         "kinche-butter": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-homemade-butte.jpg?raw=true",
         "kinche-olive": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-with-olive-oil.jpg?raw=true",
         "kinche-enkulal": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-be-enkualale.jpg?raw=true",
         "scrambled-eggs": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/Scrambled%20Eggs.jpg?raw=true",
         "scrambled-beef": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-egg-with-beef%20.jpeg?raw=true",
-        "chechebsa": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/chechebsa.jpg?raw=true",
+        // NEW Chechebsa image
+        "chechebsa": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/100ab58ead68ddf9ec7c4863ca9874e190164b38/chechebsa.jpg?raw=true",
         "dirkosh": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/dirkosh-firfir.jpg?raw=true",
         
-        // Lunch - updated images
+        // Lunch
         "dinch-siga": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/dinch-wote-be-siga.jpg?raw=true",
-        "yechikina": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9af033adc2cc77d0633cef4d9f0d2b082ffde494/yechikina-tibis.jpg?raw=true",
+        // NEW Yechikina Tibis image
+        "yechikina": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/100ab58ead68ddf9ec7c4863ca9874e190164b38/yechikina-tibis.jpg?raw=true",
         "tibis-firfir": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tibis-firfir.jpg?raw=true",
         "fasting-plater": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/fasting-plater-vegetarian.jpg?raw=true",
         "shiro": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/shiro.jpg?raw=true",
-        "mahberawi": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/bc22f3928b7f99c96c1f6bbdcf886be1f4ba4791/mahberawi-yefisk.jpg?raw=true",
+        // NEW Mahberawi Yefisk image
+        "mahberawi": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/100ab58ead68ddf9ec7c4863ca9874e190164b38/mahberawi-yefisk%20(2).jpg?raw=true",
         
-        // Sides - updated Yesuf Fitfit
+        // Sides
         "karya": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/karya-sineg.PNG?raw=true",
         "dinich-kitf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/ba6cccc5a711a35068f017ec29ee224a5038857b/dinich-kitef.jpg?raw=true",
         "timatim": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/timatim-kurit.jpg?raw=true",
         "ayib": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/ayib-bemitmita.jpg?raw=true",
         "yesuf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/yesuf-fitfit.jpg?raw=true",
         
-        // Beverages - updated Traditional Coffee, Coffee, Macchiato
+        // Beverages
         "traditional-coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/b59e576cd5cbeffb2af260956943a478872f367e/traditional-coffee.jpg?raw=true",
         "coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/traditional-coffee.jpg?raw=true",
         "macchiato": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/macchiato.jpg?raw=true",
@@ -310,12 +313,12 @@
         "beer": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/beer.jpg?raw=true"
     };
 
-    // ==================== UPDATED MENU DATA ====================
+    // ==================== UPDATED MENU DATA WITH CORRECT PRICES ====================
     const menuData = {
         breakfast: [
-            { name: "Kinche (with homemade butter)", price: 500, desc: "Steel cut oats, egg, homemade butter", img: images["kinche-butter"] },
+            { name: "Kinche (with homemade butter)", price: 400, desc: "Steel cut oats, egg, homemade butter", img: images["kinche-butter"] },
             { name: "Kinche (with olive oil)", price: 400, desc: "Steel cut oats with olive oil", img: images["kinche-olive"] },
-            { name: "Kinche be Enkulal", price: 550, desc: "Steel cut oats with egg, homemade butter & special spices", img: images["kinche-enkulal"] },
+            { name: "Kinche be Enkulal", price: 500, desc: "Steel cut oats with egg, homemade butter & special spices", img: images["kinche-enkulal"] },
             { name: "Scrambled Eggs", price: 400, desc: "Eggs with onion, tomato, jalapenos", img: images["scrambled-eggs"] },
             { name: "Scrambled Eggs with Minced Meat", price: 500, desc: "Eggs, minced meat, onion, tomato, jalapenos", img: images["scrambled-beef"] },
             { name: "Chechebsa", price: 500, desc: "Red teff, wheat flour, spiced butter, yogurt & honey", img: images["chechebsa"] },
